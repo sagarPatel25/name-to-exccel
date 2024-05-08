@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagar Patel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Sagar Patel</h1>
+            <p>
+            <a href="mailto:sagpat25@gmail.com">sagpat25@gmail.com</a>
+            (817)-513-5652</p>
+        </header>
+        <nav>
+        </nav>
+        <main>
+            <form id="formOne">
+                <label for="firstname">First Name</label><br>
+                <input type="text" id="firstname" name="firstname" value="John"><br>
+                <label for="lastname">Last Name</label> <br>
+                <input type="text" id="lastname" name="lastname" value="Doe"><br>
+                <input type="submit" value="submit"><br>
+            </form>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+    <script>
+        const form = document.querySelector('#formOne')
+   const scriptURL = 'https://script.google.com/macros/s/AKfycbyvP0oNpORcPfdvEB2MkUkT_-3IKiwAVkmJ6S_NucvmlpLiP5nPWYhTcwjmAv3e7amLOA/exec'
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+
+            console.log(formOne)
+            fetch(scriptURL, {method: 'POST', body: new FormData(formOne)})
+            .then(response => {alert('Success!',response)})
+            .catch(error => alert('Error!', error.message))
+        })
+    </script>
+</html>
